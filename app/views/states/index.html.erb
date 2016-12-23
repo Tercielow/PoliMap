@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Title</th>
+      <th>Abbreviation</th>
       <th>Districtcount</th>
       <th colspan="3"></th>
     </tr>
@@ -15,6 +16,7 @@
     <% @states.each do |state| %>
       <tr>
         <td><%= state.title %></td>
+        <td><%= state.abbreviation %></td>
         <td><%= state.districtcount %></td>
         <td><%= link_to 'Show', state %></td>
         <td><%= link_to 'Edit', edit_state_path(state) %></td>
