@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161223041140) do
+ActiveRecord::Schema.define(version: 20161223043230) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20161223041140) do
     t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "race_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -26,19 +27,23 @@ ActiveRecord::Schema.define(version: 20161223041140) do
     t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "article_id"
   end
 
   create_table "districts", force: :cascade do |t|
     t.integer  "count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "state_id"
   end
 
   create_table "races", force: :cascade do |t|
     t.string   "office"
     t.date     "votedate"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "district_id"
+    t.integer  "state_id"
   end
 
   create_table "states", force: :cascade do |t|
